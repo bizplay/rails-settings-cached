@@ -8,7 +8,7 @@ module RailsSettings
 
     # get the value field, YAML decoded
     def value
-      YAML.load(self[:value]) if self[:value].present?
+      YAML.load(self[:value], permitted_classes: Rails.application.config.active_record.yaml_column_permitted_classes || [Symbol]) if self[:value].present?
     end
 
     # set the value field, YAML encoded
