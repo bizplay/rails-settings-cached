@@ -1,3 +1,7 @@
+## 0.8
+
+- Fix loading of YAML with the newer version of Psych by using the same permitted_classes to load YAML as is configured for the application on ActiveRecord level in yaml_column_permitted_classes
+
 ## 0.7.2
 
 - Fix load default values from yml when using before Rails initialize; (#147)
